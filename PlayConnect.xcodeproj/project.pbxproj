@@ -21,6 +21,11 @@
 			path = PlayConnect;
 			sourceTree = "<group>";
 		};
+		94A3E3BB2EC429B800ADE3B3 /* github_images */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = github_images;
+			sourceTree = "<group>";
+		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -37,6 +42,7 @@
 		9414AE542EC15FC500C512D2 = {
 			isa = PBXGroup;
 			children = (
+				94A3E3BB2EC429B800ADE3B3 /* github_images */,
 				94A3E3B52EC4251C00ADE3B3 /* README.md */,
 				9414AE5F2EC15FC500C512D2 /* PlayConnect */,
 				9414AE5E2EC15FC500C512D2 /* Products */,
@@ -68,6 +74,7 @@
 			);
 			fileSystemSynchronizedGroups = (
 				9414AE5F2EC15FC500C512D2 /* PlayConnect */,
+				94A3E3BB2EC429B800ADE3B3 /* github_images */,
 			);
 			name = PlayConnect;
 			packageProductDependencies = (
