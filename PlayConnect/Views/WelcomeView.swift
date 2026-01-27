@@ -26,7 +26,7 @@ struct WelcomeView: View {
                     .resizable()
                     .scaledToFit()
                     .frame(maxWidth: 280)
-                    .shadow(color: .clear, radius: 0) // no heavy shadows
+                    .shadow(color: .clear, radius: 0)
                     .padding(.top, 60)
 
                 // Title and tagline

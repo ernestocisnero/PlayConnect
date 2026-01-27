@@ -23,20 +23,21 @@ struct RoleCard: View {
                         .frame(width: 60, height: 60)
                     
                     if role == .player {
-                        Image(systemName: "p.square.fill")
+                        Image(systemName: "soccerball")
                     } else {
-                        Image(systemName: "c.square.fill")
+                        Image(systemName: "clipboard")
                     }
                 }
                 
                 // Text Content
                 VStack(alignment: .leading, spacing: 4) {
                     Text(role.displayName)
-                        .font(.headline)
+                        .bold()
+                        .font(.subheadline)
                         .foregroundColor(.primary)
                     
                     Text(role.description)
-                        .font(.subheadline)
+                        .font(.footnote)
                         .foregroundColor(.secondary)
                         .lineLimit(2)
                 }

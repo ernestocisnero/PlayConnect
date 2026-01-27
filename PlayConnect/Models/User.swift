@@ -13,6 +13,7 @@ struct User {
     var name: String
     var email: String
     var avatar: URL?
+    var role: UserRole?
     
 }
 
@@ -21,6 +22,7 @@ extension User{
         id: UUID().uuidString,
         name: "Ernesto Cisnero",
         email: "ernesto.cisnero@gmail.com",
-        avatar: URL(string: "https://i.pravatar.cc/300")
+        avatar: URL(string: "https://i.pravatar.cc/300"),
+        role: .player
     )
 }

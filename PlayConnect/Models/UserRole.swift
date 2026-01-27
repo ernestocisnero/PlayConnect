@@ -20,9 +20,9 @@ enum UserRole: String, CaseIterable {
     var description: String {
         switch self {
         case .player:
-            return "Create your profile, showcase highlights, and get discovered"
+            return "Create your profile, show your skills, get discovered"
         case .coach:
-            return "Find talent, publish tryouts, and build your team"
+            return "Find talent, publish tryouts, build your team"
         }
     }
 }

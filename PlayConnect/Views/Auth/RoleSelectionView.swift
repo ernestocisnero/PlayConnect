@@ -14,12 +14,11 @@ struct RoleSelectionView: View {
     @EnvironmentObject var appState: AppState
     @State private var selectedRole: UserRole?
     @State private var isLoading = false
-    @State private var errorMessage: String?
     
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(spacing: 32) {
+                VStack(spacing: 10) {
                     // Header
                     VStack(spacing: 12) {
                         Text("Welcome to PlayConnect")
@@ -34,6 +33,29 @@ struct RoleSelectionView: View {
                     }
                     .padding(.top, 40)
                     .padding(.horizontal, 24)
+                    
+                    ZStack {
+                        if selectedRole == .coach {
+                            Image("coach")
+                                .resizable()
+                                .scaledToFit()
+                                .transition(.opacity)
+                                .frame(maxWidth: 150)
+                                .shadow(color: .clear, radius: 0)
+                                .padding(.top, 40)
+                        } else {
+                            Image("player")
+                                .resizable()
+                                .scaledToFit()
+                                .transition(.opacity)
+                                .frame(maxWidth: 150)
+                                .shadow(color: .clear, radius: 0)
+                                .padding(.top, 40)
+                        }
+                    }
+                    .animation(.easeInOut(duration: 0.45), value: selectedRole)
+
+                        
                     
                     // Role Cards
                     VStack(spacing: 16) {
@@ -51,17 +73,11 @@ struct RoleSelectionView: View {
                     }
                     .padding(.horizontal, 24)
                     
-                    // Error Message
-                    if let errorMessage = errorMessage {
-                        Text(errorMessage)
-                            .font(.caption)
-                            .foregroundColor(.red)
-                            .padding(.horizontal, 24)
-                    }
                     
                     // Continue Button
                     Button {
-                        appState.userIsLoggedIn = false
+                        appState.userIsLoggedIn = false//temporal
+                        // Update useer role in appState here.
                     } label: {
                         Group {
                             if isLoading {
