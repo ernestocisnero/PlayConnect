@@ -36,7 +36,7 @@ struct RoleSelectionView: View {
                     
                     ZStack {
                         if selectedRole == .coach {
-                            Image("coach")
+                            Image("")
                                 .resizable()
                                 .scaledToFit()
                                 .transition(.opacity)
@@ -44,7 +44,7 @@ struct RoleSelectionView: View {
                                 .shadow(color: .clear, radius: 0)
                                 .padding(.top, 40)
                         } else {
-                            Image("player")
+                            Image("")
                                 .resizable()
                                 .scaledToFit()
                                 .transition(.opacity)
