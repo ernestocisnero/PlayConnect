@@ -19,7 +19,7 @@ struct RoleCard: View {
                 // Icon
                 ZStack {
                     Circle()
-                        .fill(isSelected ? Color.blue.opacity(0.15) : Color(.systemGray6))
+                        .fill(isSelected ? Color(.appBlue).opacity(0.3) : Color(.systemGray6))
                         .frame(width: 60, height: 60)
                     
                     if role == .player {
@@ -32,14 +32,13 @@ struct RoleCard: View {
                 // Text Content
                 VStack(alignment: .leading, spacing: 4) {
                     Text(role.displayName)
-                        .bold()
-                        .font(.subheadline)
-                        .foregroundColor(.primary)
-                    
+                        .font(.system(size: 15, weight: .bold, design: .rounded))
+                        .foregroundStyle(.black)
+
                     Text(role.description)
-                        .font(.footnote)
-                        .foregroundColor(.secondary)
-                        .lineLimit(2)
+                        .font(.system(size: 11, weight: .semibold, design: .rounded))
+                        .foregroundStyle(.secondary)
+                        
                 }
                 
                 Spacer()
@@ -47,20 +46,20 @@ struct RoleCard: View {
                 // Selection Indicator
                 Image(systemName: isSelected ? "checkmark.circle.fill" : "circle")
                     .font(.title2)
-                    .foregroundColor(isSelected ? Color(#colorLiteral(red: 0.31, green: 0.64, blue: 0.82, alpha: 1)) : Color(.systemGray4))
+                    .foregroundColor(isSelected ? Color(.appBlue) : Color(.systemGray4))
             }
             .padding(20)
             .background(
                 RoundedRectangle(cornerRadius: 16)
-                    .fill(Color(.systemBackground))
-                    .shadow(color: isSelected ? Color.blue.opacity(0.2) : Color.black.opacity(0.05),
+                    .fill(Color(.appWhiteBackground))
+                    .shadow(color: isSelected ? Color(.appBlue).opacity(0.2) : Color.black.opacity(0.05),
                             radius: isSelected ? 8 : 4,
                             x: 0,
                             y: 2)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 16)
-                    .stroke(isSelected ? Color(#colorLiteral(red: 0.31, green: 0.64, blue: 0.82, alpha: 1)) : Color.clear, lineWidth: 2)
+                    .stroke(isSelected ? Color(.appBlue) : Color.clear, lineWidth: 2)
             )
         }
         .buttonStyle(PlainButtonStyle())

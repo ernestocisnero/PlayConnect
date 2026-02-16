@@ -33,7 +33,7 @@ class PlayerUIView: UIView {
         super.init(frame: frame)
         
         guard let url = Bundle.main.url(forResource: videoName, withExtension: videoType) else {
-            print("⚠️ Video file not found: \(videoName).\(videoType)")
+            print("Video file not found: \(videoName).\(videoType)")
             return
         }
         

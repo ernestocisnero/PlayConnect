@@ -45,7 +45,7 @@ struct WelcomeView: View {
             }
             .padding(.horizontal, 20)
             .safeAreaPadding(.vertical, 30)
-            
+
         }
         .sheet(isPresented: $showLogIn ){
             LoginView()
@@ -57,7 +57,6 @@ struct WelcomeView: View {
                 .presentationDetents([.fraction(0.75)])
                 .presentationDragIndicator(.visible)
         }
-        
     }
 }
 

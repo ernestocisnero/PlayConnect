@@ -21,14 +21,10 @@ struct RoleSelectionView: View {
                 VStack(spacing: 10) {
                     // Header
                     VStack(spacing: 12) {
-                        Text("Welcome to PlayConnect")
-                            .font(.largeTitle)
-                            .fontWeight(.bold)
-                            .multilineTextAlignment(.center)
-                        
-                        Text("Choose how you'll use the platform")
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
+                                                
+                        Text("What brings you to the Pitch?")
+                            .font(.system(size: 30, weight: .semibold, design: .rounded))
+                            .foregroundStyle(.appBlue)
                             .multilineTextAlignment(.center)
                     }
                     .padding(.top, 40)
@@ -91,7 +87,7 @@ struct RoleSelectionView: View {
                         .foregroundColor(.white)
                         .frame(maxWidth: .infinity)
                         .frame(height: 54)
-                        .background(selectedRole != nil ? Color(#colorLiteral(red: 0.31, green: 0.64, blue: 0.82, alpha: 1)) : Color.blue.opacity(0.5))
+                        .background(selectedRole != nil ? Color(.appBlue) : Color(.appBlue).opacity(0.5))
                         .cornerRadius(12)
                     }
                     .disabled(selectedRole == nil || isLoading)

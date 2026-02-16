@@ -10,7 +10,7 @@ import SwiftUI
 struct TermsAndPolicyView: View {
     @State private var selectedURL: URL?
     @State private var showSafari = false
-        
+
         var body: some View {
             Spacer()
             Divider()
@@ -20,13 +20,12 @@ struct TermsAndPolicyView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 40)
                 .tint(.blue)
-                
                 .environment(\.openURL, OpenURLAction { url in
                     self.selectedURL = url
                     self.showSafari = true
                     return .handled
                 })
-                
+
                 .sheet(isPresented: $showSafari) {
                     if let url = selectedURL {
                             SafariView(url: url)
