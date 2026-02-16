@@ -18,17 +18,18 @@ struct WelcomeView: View {
             LoopingPlayerView(videoName: "VideoBackground", videoType: "mov").ignoresSafeArea()
             
             VStack(alignment: .center, spacing: 20){
-                VStack(alignment: .leading){
-                    Text("CONNECT, PLAY\nSHINE")
+                HStack{
+                    Text("CONNECT\nPLAY\nSHINE")
+                    Spacer()
                 }
                 .font(.system(size: 45, weight: .bold, design: .rounded))
-                .foregroundStyle(.white)
+                .foregroundStyle(.appWhiteBackground)
                 
                 Spacer()
                 SignButton(type:"google", action: {})
 
                 SignButton(type:"email", action: { showLogIn.toggle() })
-                Divider()
+              
                 HStack{
                     Text("Don't have an account?")
                         .font(.system(size: 18, weight: .semibold, design: .rounded))
@@ -40,7 +41,7 @@ struct WelcomeView: View {
                             .font(.system(size: 18, weight: .semibold, design: .rounded))
                     }
                 }
-                
+               TermsAndPolicyView()
             }
             .padding(.horizontal, 20)
             .safeAreaPadding(.vertical, 30)

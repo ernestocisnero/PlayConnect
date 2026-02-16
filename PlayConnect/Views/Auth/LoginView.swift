@@ -21,6 +21,7 @@ struct LoginView: View {
                 .ignoresSafeArea()
 
             VStack(spacing: 28) {
+                
                 VStack(spacing: 6) {
                     Text("Welcome Back")
                         .font(.system(size: 30, weight: .bold, design: .rounded))
@@ -44,6 +45,16 @@ struct LoginView: View {
                         .background(Color.white)
                         .cornerRadius(30)
                         .overlay(RoundedRectangle(cornerRadius: 30).stroke(Color(#colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)), lineWidth: 1))
+                }
+                
+                HStack {
+                    Spacer()
+                    Button("Forgot Password?") {
+                    }
+                    .font(.system(size: 14, weight: .light, design: .rounded))
+                    .foregroundColor(Color("appBlue"))
+                    .padding(.horizontal)
+                    
                 }
                 
                 SignButton(type:"login", action: { appState.userIsLoggedIn = true })
